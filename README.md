@@ -7,10 +7,10 @@ Will it rain on my parade? NASA Space apps challenge. Our project predicts the p
 
 ## Download the project from GitHub
 
-Clone the repository using the following command (replace `YOUR-USERNAME` with your GitHub username if needed):
+Clone the repository using the following command:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/NEBULAAA.git
+git clone https://github.com/ximenapgomezc-wq/NEBULAAA.git
 cd NEBULAAA
 ```
 
