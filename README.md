@@ -1,7 +1,7 @@
 # Nebulaaa - Weather Prediction Web App
 
 ## Descripción
-Web app que predice el clima de capitales del mundo usando un CSV con datos históricos.
+Will it rain on my parade? NASA Space apps challenge. Our project predicts the probability of a certain weathers in the long run. This is to say a person could search for the weather in any place in the world months in advanced and get an accurate prediction based on last year's weather"
 
 ## Estructura
 Nebulaaa/
