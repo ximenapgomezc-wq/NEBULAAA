@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Weather Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<style>
+body{
+  margin:0; display:grid; grid-template-columns:380px 1fr; height:100vh; font-family:sans-serif; background:#0b0f1a; color:#e8e6ff;
+}
+.sidebar{
+  padding:18px; overflow-y:auto; border-right:2px solid rgba(255,255,255,0.06);
+}
+h1{margin:0 0 6px; color:#b39cff;}
+label{font-size:14px;margin:8px 0;display:block;}
+select,input{width:100%;padding:8px;border-radius:8px;background:#0b1024;color:#e8e6ff;border:1px solid rgba(255,255,255,0.06);}
+.btn{width:100%;padding:12px;margin-top:12px;border:none;border-radius:8px;background:linear-gradient(180deg,#6c56ff,#b39cff);color:#0a0a12;font-weight:800;cursor:pointer;}
+.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px; justify-items:center;}
+.card{border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px;background:#0e1221;box-shadow:0 0 10px rgba(0,0,0,.2); width:160px; text-align:center;}
+.metric{font-size:20px;font-weight:800;}
+.subtxt{font-size:12px;color:#a5b3d9;}
+.charts{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px;}
+.chart-card{border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:12px;background:#0f1428;}
+.chart-card h3{margin:0 0 6px;font-size:13px;color:#cdd7ff;}
+#map{width:100%;height:100vh;}
+</style>
+</head>
+<body>
+<aside class="sidebar">
+  <h1>🌦️ Will It Rain on My Parade?</h1>
+  <div>
+    <label>City:</label>
+    <select id="city"></select>
+    <label>Date:</label>
+    <div style="position:relative; width:100%;">
+      <input type="date" id="date" style="width:100%; padding-right:36px;" placeholder="YYYY-MM-DD">
+      <span style="position:absolute; right:10px; top:50%; transform:translateY(-50%); pointer-events:none; font-size:16px; color:#b39cff;">📅</span>
+    </div>
+    <button class="btn" id="predictBtn">Predict</button>
+  </div>
+
+  <div class="metrics">
+    <div class="card"><h3>🌡️ Temperature</h3><div class="metric" id="Temperature_K_avg">-- °C</div><div class="subtxt">Temperature Trends</div></div>
+    <div class="card"><h3>☔ Precipitation</h3><div class="metric" id="Precipitation_kgm2_avg">--</div><div class="subtxt">Precipitation Trends</div></div>
+    <div class="card"><h3>💨 Wind Speed</h3><div class="metric" id="Wind_speed_ms_avg">--</div><div class="subtxt">Wind Speed</div></div>
+    <div class="card"><h3>🧭 Wind Direction</h3><div class="metric" id="Wind_dir_deg_avg">--</div><div class="subtxt">Wind Direction</div></div>
+    <div class="card"><h3>💧 Humidity</h3><div class="metric" id="Humidity_kgkg-1_avg">--</div><div class="subtxt">Humidity</div></div>
+    <div class="card"><h3>☁ Cloud Temp</h3><div class="metric" id="Cloud_top_temp_K_avg">-- °C</div><div class="subtxt">Cloud Temp</div></div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h3>Temperature Trends</h3>
+      <canvas id="Temperature_K_top3" height="120"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Precipitation Trends</h3>
+      <canvas id="Precipitation_kgm2_top3" height="120"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Wind Speed</h3>
+      <canvas id="Wind_speed_ms_top3" height="120"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Wind Direction</h3>
+      <canvas id="Wind_dir_deg_top3" height="120"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Humidity</h3>
+      <canvas id="Humidity_kgkg-1_top3" height="120"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Cloud Temp</h3>
+      <canvas id="Cloud_top_temp_K_top3" height="120"></canvas>
+    </div>
+  </div>
+</aside>
+<main id="map"></main>
+<script src="/static/script.js"></script>
+</body>
+</html>
