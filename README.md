@@ -5,6 +5,22 @@ Will it rain on my parade? NASA Space apps challenge. Our project predicts the p
 
 ---
 
+## Prerequisites
+
+Before running the application, make sure your system meets the following requirements:
+
+- **Python version:** 3.12.x is recommended.  
+  > ⚠️ If you are using Python 3.13.x (especially on Windows 11), some packages like `pandas==2.2.2` may fail to install. To avoid issues, it is best to use Python 3.12.x when setting up the virtual environment.
+
+- **Virtual environment:** It is highly recommended to create a virtual environment to isolate dependencies.  
+
+- **Required packages:** All dependencies are listed in `requirements.txt` and can be installed using `pip install -r requirements.txt` after activating the virtual environment.
+
+- **GitHub:** Git must be installed to clone or download the project repository.  
+  > ⚠️ You do **not** need a GitHub account to run the project locally; an account is only required if you want to push changes to the repository.
+
+---
+
 ## Download the project from GitHub
 
 Clone the repository using the following command:
