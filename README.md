@@ -1,9 +1,24 @@
 # Nebulaaa - Weather Prediction Web App
 
-## Descripción
+## Description
 Will it rain on my parade? NASA Space apps challenge. Our project predicts the probability of a certain weathers in the long run. This is to say a person could search for the weather in any place in the world months in advanced and get an accurate prediction based on last year's weather"
 
-## Estructura
+---
+
+## Download the project from GitHub
+
+Clone the repository using the following command (replace `YOUR-USERNAME` with your GitHub username if needed):
+
+```bash
+git clone https://github.com/YOUR-USERNAME/NEBULAAA.git
+cd NEBULAAA
+```
+
+---
+
+## Project Structure
+
+```
 Nebulaaa/
 ├── app.py                     # Backend using Flask
 ├── data/
